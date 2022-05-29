@@ -27,10 +27,14 @@ For development, you will need Node.js and mongodb installed in your environemen
 
 ---
 ## Running the project
-Please download all the node modules mentioned in package.json file to successfully run your application with :- 
+Please download all the node modules mentioned in package.json file to successfully run the application :- 
 ```
 $ npm install <node_module> 
 ```    
-once all the modules are succcessfully downloaded, run project with $nodemon app.js . Make sure that mongo is up and running by running $mongod 
+once all the modules are succcessfully downloaded, run your project with 
+```
+$ nodemon app.js
+```
+Note :- Make sure that mongo is up and running by running ## $ mongod 
 
 application should be up at http://localhost:9000/
