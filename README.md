@@ -13,3 +13,21 @@ Training models -  faceLandmark68Net, faceRecognitionNet, ssdMobilenetv1
 This application first uses face api to detect images used during registration and login , then compare how similar these 2 images are by calculating Euclidean distance. 
 For face recognition, smaller values indicate more similar faces.
 If the faces matches, user will be allowed to login, otherise he/she will be directed to signup 
+
+---
+## Requirements
+
+For development, you will need Node.js and mongodb installed in your environement.
+
+---
+## Install
+
+    $ git clone https://github.com/Kanika1309/privatewallet
+    $ cd privatewallet
+
+---
+## Running the project
+Please download all the node modules mentioned in package.json file to successfully run your application with $ npm install <node_module>    
+once all the modules are succcessfully downloaded, run project with $nodemon app.js . Make sure that mongo is up and running by running $mongod 
+
+application should be up at http://localhost:9000/
