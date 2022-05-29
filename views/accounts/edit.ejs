@@ -1,0 +1,36 @@
+<% layout('layouts/boilerplate')%>
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <h1 class="text-center">EDIT ACCOUNT</h1>
+            <div class="card shadow">
+                <div class="card-body">
+                    <form action="/<%=currentUser._id%>?_method=PUT" method="POST" class="validated-form"
+                        enctype="multipart/form-data" novalidate>
+                        <div class="mb-3">
+                            <label class="form-label" for="username">NAME</label>
+                            <input class="form-control" type="text" id="username" name="username"
+                                value="<%=currentUser.username %>" required autofocus>
+                            <div class="invalid-feedback">
+                                Please enter your name.
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="price">MONTHLY INCOME</label>
+                            <div class="input-group">
+                                <span class="input-group-text" id=" price-label">₹</span>
+                                <input type="text" class="form-control" id="income" placeholder="0.00"
+                                    aria-label="price" aria-describedly="price-lebel" name="income"
+                                    value="<%=currentUser.income%>" required>
+                                <div class=" invalid-feedback">
+                                    Please enter the price.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <button class="btn btn-info">SAVE</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>

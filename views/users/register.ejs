@@ -1,0 +1,101 @@
+<% layout('layouts/boilerplate')%>
+    <form action="/register" method="POST" enctype="multipart/form-data" class="validated-form" novalidate>
+        <div class="row mb-3">
+            <div class="col-6">
+                <div class="card" mb-3>
+                    <div class="card-body">
+                        <h5 class="card-title">SIGN UP
+                        </h5>
+                        <div class="mb-3">
+                            <label class="form-label" for="email">EMAIL</label>
+                            <input class="form-control" type="email" id="email" name="email" required autofocus>
+                            <div class="invalid-feedback">
+                                Please enter your email.
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="username">NAME</label>
+                            <input class="form-control" type="text" id="username" name="username" required>
+                            <div class="invalid-feedback">
+                                Please enter your name.
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="income">MONTHLY INCOME</label>
+                            <div class="input-group">
+                                <span class="input-group-text" id=" price-label">₹</span>
+                                <input type="text" class="form-control" id="income" placeholder="0.00"
+                                    aria-label="price" aria-describedly="price-label" name="income" required>
+                                <div class="invalid-feedback">
+                                    Please enter the price.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="saving">SAVINGS</label>
+                            <div class="input-group">
+                                <span class="input-group-text" id=" price-label">₹</span>
+                                <input type="text" class="form-control" id="saving" placeholder="0.00"
+                                    aria-label="price" aria-describedly="price-label" name="saving" required>
+                                <div class="invalid-feedback">
+                                    Please enter the price.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="password">PASSWORD</label>
+                            <input class="form-control" type="password" id="password" name="password" required>
+                            <div class="invalid-feedback">
+                                Please scan your face.
+                            </div>
+                        </div>
+                        <button class="btn btn-success btn-block">SIGN UP</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="card" mb-3>
+                    <div class="card-body">
+                        <h5 class="card-title">UPLOAD IMAGE
+                        </h5>
+                        <div class="mb-3">
+                            <label class="form-label" for="image"></label>
+                            <input type="file" class="form-control" id="image" name="image">
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">OR
+                        </h5>
+                        <div id="camera"></div>
+                        <div class="mb-3">
+                            <button class="btn btn-success btn-block" onclick="take_snapshot()">TAKE A SNAPSHOT</button>
+                        </div>
+                        <div id="images"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+        </div>
+    </form>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/webcamjs/1.0.26/webcam.min.js"></script>
+    <script>
+        Webcam.set({
+            width: 350,
+            height: 350,
+            image_format: 'jpeg',
+            jpeg_equality: 90
+        })
+        Webcam.attach("#camera")
+
+        var shutter = new Audio();
+        shutter.autoplay = true;
+        shutter.src = navigator.userAgent.match(/FireFox/) ? 'shutter.ogg' : 'shutter.mp3';
+
+        function take_snapshot() {
+            shutter.play()
+            Webcam.snap(function (data_uri) {
+                document.getElementById('images').innerHTML = `<img src="` + data_uri + `"/>`;
+            });
+        }
+    </script>

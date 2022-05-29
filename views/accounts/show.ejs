@@ -1,0 +1,102 @@
+<% layout('layouts/boilerplate')%>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.8.0/dist/chart.min.js"></script>
+    <link rel="stylesheet" href="/stylesheets/stars.css">
+    <div class="row mb-3">
+        <!-- <div class="col-6"> -->
+        <div class="card" mb-3>
+            <div class="card-body">
+                <h5 class="card-title">USERNAME:
+                    <%=currentUser.username%>
+                </h5>
+                <p class="card-text">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">DATE</th>
+                            <th scope="col">BONUS</th>
+                            <th scope="col">EXPENDITURE</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% for(let daily of currentUser.data) { %>
+                            <tr>
+                                <th scope="row">
+                                    <%=daily.date%>
+                                </th>
+                                <td>
+                                    <%=daily.bonus%>
+                                </td>
+                            </tr>
+                            <%} %>
+                    </tbody>
+                </table>
+                </p>
+                <h6></h6>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">INCOME:
+                        <%=currentUser.income%>
+                    </li>
+                    <li class="list-group-item">SAVING:
+                        <%=currentUser.saving%>
+                    </li>
+                    <li class="list-group-item">EMAIL:
+                        <%=currentUser.email%>
+                    </li>
+                </ul>
+            </div>
+            <div class="card-body">
+                <a class="card-link btn btn-info" href="/<%=currentUser.id%>/edit">EDIT</a>
+                <form class="d-inline" action="/<%=currentUser.id%>?_method=DELETE" method="POST">
+                    <button class="btn btn-danger">DELETE</button>
+                </form>
+            </div>
+        </div>
+        <!-- </div> -->
+        <!-- <div class="col-6">
+            <div class="card" mb-3>
+                <div class="card-body">
+                    <h5 class="card-title">GRAPH:
+                    </h5>
+                    <canvas id="chart" width="200" height="300"></canvas>
+                    <script>
+                        const ctx = document.getElementById('Chart').getContext('2d');
+                        const myChart = new Chart(ctx, {
+                            type: 'bar',
+                            data: {
+                                labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+                                datasets: [{
+                                    label: '# of Votes',
+                                    data: [12, 19, 3, 5, 2, 3],
+                                    backgroundColor: [
+                                        'rgba(255, 99, 132, 0.2)',
+                                        'rgba(54, 162, 235, 0.2)',
+                                        'rgba(255, 206, 86, 0.2)',
+                                        'rgba(75, 192, 192, 0.2)',
+                                        'rgba(153, 102, 255, 0.2)',
+                                        'rgba(255, 159, 64, 0.2)'
+                                    ],
+                                    borderColor: [
+                                        'rgba(255, 99, 132, 1)',
+                                        'rgba(54, 162, 235, 1)',
+                                        'rgba(255, 206, 86, 1)',
+                                        'rgba(75, 192, 192, 1)',
+                                        'rgba(153, 102, 255, 1)',
+                                        'rgba(255, 159, 64, 1)'
+                                    ],
+                                    borderWidth: 1
+                                }]
+                            },
+                            options: {
+                                scales: {
+                                    y: {
+                                        beginAtZero: true
+                                    }
+                                }
+                            }
+                        });
+                    </script>
+                </div>
+            </div>
+        </div> -->
+    </div>
+    <script src="/javascripts/showPageMap.js"></script>
