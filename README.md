@@ -1,8 +1,18 @@
-# Campsite
+# Private Wallet
 
-* It is a website which helps the users to find the perfect place for camping
-as pertheirrequirements.
-* It only allows registered users to login.
-* Afterlogin users can create, edit or delete their own campgrounds or
-rate/comment on other campgrounds.
-* Tech Used - BootStrap, NodeJS, MongoDB, Express
+* Its a browser based web application using face recognition technology 
+* It allow users to manage their financial details on daily basis and keep track of their income , bonus and expenditure 
+* Tech Used - HTML , CSS , JS, NodeJS, MongoDB
+* Api - Javascript face-api built on top of tensorflow.js core api 
+
+Training models - 
+// faceLandmark68Net
+// faceRecognitionNet
+// ssdMobilenetv1
+* faceapi.nets.ssdMobilenetv1;
+* faceapi.nets.faceLandmark68Net;
+* faceapi.nets.faceRecognitionNet;
+
+This application first use face api to detect images used during registration and login , then compare how similar these 2 images are by calculating Euclidean distance. 
+For face recognition, smaller values indicate more similar faces.
+If the faces matches, user will be allowed to login, otherise he/she will be directed to signup 
