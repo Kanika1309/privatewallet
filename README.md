@@ -5,10 +5,7 @@
 * Tech Used - HTML , CSS , JS, NodeJS, MongoDB
 * Api - Javascript face-api built on top of tensorflow.js core api 
 
-Training models - 
-// faceLandmark68Net
-// faceRecognitionNet
-// ssdMobilenetv1
+Training models -  faceLandmark68Net, faceRecognitionNet, ssdMobilenetv1
 * faceapi.nets.ssdMobilenetv1;
 * faceapi.nets.faceLandmark68Net;
 * faceapi.nets.faceRecognitionNet;
