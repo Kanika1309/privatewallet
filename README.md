@@ -10,8 +10,8 @@ Training models -  faceLandmark68Net, faceRecognitionNet, ssdMobilenetv1
 * faceapi.nets.faceLandmark68Net;
 * faceapi.nets.faceRecognitionNet;
 
-This application first uses face api to detect images used during registration and login , then compare how similar these 2 images are by calculating Euclidean distance. 
-For face recognition, smaller values indicate more similar faces.
+This application first uses face api to detect images used during registration and login , then compare how similar these 2 images are by calculating Euclidean distance between them. 
+For face recognition, smaller values indicate more similar faces. For example , if value is 0 , then its a 100% match of faces. 
 If the faces matches, user will be allowed to login, otherise he/she will be directed to signup 
 
 ---
