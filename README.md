@@ -37,4 +37,4 @@ $ nodemon app.js
 ```
 Note :- Make sure that mongo is up and running with command **$ mongod**
 
-application should be up at http://localhost:9000/
+Now, application should be up at http://localhost:9000/
