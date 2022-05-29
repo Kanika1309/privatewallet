@@ -35,6 +35,6 @@ once all the modules are succcessfully downloaded, run your project with
 ```
 $ nodemon app.js
 ```
-Note :- Make sure that mongo is up and running by running **$ mongod**
+Note :- Make sure that mongo is up and running with command **$ mongod**
 
 application should be up at http://localhost:9000/
